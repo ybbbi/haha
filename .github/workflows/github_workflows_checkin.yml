@@ -1,7 +1,7 @@
 name: hahacheckin
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每日 UTC 0 点签到
+    - cron: '53 1 * * *'  
   workflow_dispatch:
 
 jobs:
