@@ -1,0 +1,21 @@
+name: hahacheckin
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每日 UTC 0 点签到
+  workflow_dispatch:
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install requests
+        run: pip install requests
+      - name: Run checkin
+        env:
+          COOKIE: ${{ secrets.COOKIE }}
+        run: python checkin.py
