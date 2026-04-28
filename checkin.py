@@ -48,4 +48,4 @@ try:
     else:
         print("⚠️ 请检查参数是否正确")
 except Exception as e:
-    print(f"❌ 请求失败: {str(e)}
+    print(f"❌ 请求失败: {str(e)}")
