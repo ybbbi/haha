@@ -29,9 +29,13 @@ headers["Cookie"] = cookie
 # POST 地址
 url = "https://vip.ioshashiqi.com/aspx3/mobile/qiandao.aspx"
 
-# 表单数据（根据你抓到的真实签到参数填写）
-# 示例：data = {"__EVENTTARGET": "", "__EVENTARGUMENT": "", "btnSign": "签到"}
-data = {}
+# 已填入你提供的完整签到表单数据
+data = {
+    "__EVENTTARGET": "_lbtqd",
+    "__EVENTARGUMENT": "",
+    "__VIEWSTATE": "4fwvG0MBLrngzimE6u7EZukt8MfC3K18HQ7WYh/izlONJLOckiHHhghvbDu7xbWHCM/nONOx60tUZZwrdvrlQ8lKtdTMOGegmmQhtt5Nw3I=",
+    "__VIEWSTATEGENERATOR": "1E359395"
+}
 
 print("⏰ 开始签到...")
 try:
@@ -44,4 +48,4 @@ try:
     else:
         print("⚠️ 请检查参数是否正确")
 except Exception as e:
-    print(f"❌ 请求失败: {str(e)}")
+    print(f"❌ 请求失败: {str(e)}
