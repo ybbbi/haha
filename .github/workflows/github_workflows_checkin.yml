@@ -1,7 +1,7 @@
 name: hahacheckin
 on:
   schedule:
-    - cron: '53 1 * * *'  
+    - cron: '53 16 * * *'  
   workflow_dispatch:
 
 jobs:
