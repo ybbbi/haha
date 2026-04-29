@@ -39,7 +39,7 @@ data = {
 
 print("⏰ 开始签到...")
 try:
-    # resp = requests.post(url, headers=headers, data=data, timeout=10)
+    resp = requests.post(url, headers=headers, data=data, timeout=10)
     print(f"✅ 状态码: {resp.status_code}")
     print(f"🔍 响应长度: {len(resp.text)}")
     print(f"🔍 响应内容: {resp.text}")
