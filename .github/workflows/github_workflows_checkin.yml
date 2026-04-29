@@ -19,3 +19,5 @@ jobs:
         env:
           COOKIE: ${{ secrets.COOKIE }}
         run: python checkin.py
+      - name: keep alive action
+        uses: efrecon/gh-action-keepalive@main # using the workflow with default settings
