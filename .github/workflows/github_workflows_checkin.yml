@@ -94,7 +94,7 @@ jobs:
           });
 
 
-          const keep = 5;
+          const keep = 3;
 
 
           const oldRuns = runs.data.workflow_runs.slice(keep);
