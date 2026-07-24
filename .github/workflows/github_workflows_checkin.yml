@@ -25,12 +25,12 @@ jobs:
 
 
     - name: 拉取代码
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
 
 
     - name: 安装Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
 
       with:
 
@@ -76,7 +76,7 @@ jobs:
 
     - name: 清理旧运行记录
 
-      uses: actions/github-script@v7
+      uses: actions/github-script@v8
 
       with:
 
