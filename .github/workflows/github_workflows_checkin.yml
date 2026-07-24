@@ -5,9 +5,8 @@ on:
 
   schedule:
 
-    # 北京时间每天8点
-    # UTC时间0点
-    - cron: '0 0 * * *'
+    # UTC 16点30分(北京时间 0:30)
+    - cron: '30 16 * * *'
 
 
   workflow_dispatch:
