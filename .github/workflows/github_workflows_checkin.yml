@@ -6,7 +6,7 @@ on:
   schedule:
 
     # UTC 16点30分(北京时间 0:30)
-    - cron: '30 16 * * *'
+    - cron: '30 8 * * *'
 
 
   workflow_dispatch:
