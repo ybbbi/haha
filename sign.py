@@ -4,7 +4,7 @@ import datetime
 import os
 
 
-BASE = "https://vip.ioshashiqi.com"
+BASE = "https://www.haxiaohaios2.com"
 
 
 USER = os.getenv("VIP_USER")
