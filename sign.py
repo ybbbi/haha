@@ -2,7 +2,64 @@ import requests
 from bs4 import BeautifulSoup
 import datetime
 import os
+from urllib.parse import urljoin, urlsplit
 
+def find_sign_links(response):
+
+    soup = BeautifulSoup(
+        response.content,
+        "html.parser"
+    )
+
+    print("🔍 搜索签到入口")
+
+    found = False
+
+    for a in soup.find_all("a"):
+
+        text = a.get_text(" ", strip=True)
+
+        href = a.get("href", "")
+
+        keywords = (
+            "签到",
+            "qiandao",
+            "sign",
+            "checkin"
+        )
+
+        value = (text + href).lower()
+
+        if any(k in value for k in keywords):
+
+            found = True
+
+            if href:
+
+                full_url = urljoin(
+                    response.url,
+                    href
+                )
+
+                # 只显示本站链接，避免泄漏其他信息
+                if urlsplit(full_url).netloc == urlsplit(BASE).netloc:
+                    print(
+                        f"📌 {text}: "
+                        f"{urlsplit(full_url).path}"
+                    )
+
+            else:
+
+                print(
+                    f"📌 找到可能的签到按钮: {text}"
+                )
+
+    if not found:
+
+        print(
+            "⚠️ 当前页面没有发现签到链接，"
+            "可能使用 JavaScript 或其他页面入口"
+        )
 
 BASE = "https://www.haxiaohaios2.com"
 
@@ -166,7 +223,7 @@ def login():
 
     )
 
-
+    find_sign_links(r)
     if "密码错误" in r.text:
 
         print("❌ 密码错误")
